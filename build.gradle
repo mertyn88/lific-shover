@@ -1,0 +1,63 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'java-library'
+}
+
+java {
+    withSourcesJar()
+}
+
+task packageSources(type: Jar, dependsOn: classes) {
+    from sourceSets
+    archiveClassifier.set("sources")
+}
+
+group = 'io.lific'
+version = '0.2.47'
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+
+    repositories {
+        maven {
+            url 'http://nexus.lific.net/repository/lific-dev/'
+            credentials {
+                username 'admin'
+                password 'snrndjqt5?xpzm'
+            }
+            allowInsecureProtocol = true
+        }
+    }
+}
+
+
+repositories {
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+    maven {
+        url "https://packages.confluent.io/maven"
+    }
+}
+
+dependencies {
+    implementation(group: 'org.apache.kafka', name: 'kafka_2.13', version: '2.7.0')
+    // 타 프로젝트에서 의존성을 명시하기 위한 프로젝트 리스트 ( 해당 프로젝트에서는 없어도 자동 implementation )
+    implementation(group: 'org.apache.avro', name: 'avro', version: '1.10.1')
+
+    implementation(group: 'io.confluent', name: 'kafka-avro-serializer', version: '7.0.1')
+    implementation(group: 'io.confluent', name: 'kafka-schema-serializer', version: '7.0.1')
+    implementation(group: 'io.confluent', name: 'kafka-schema-registry-client', version: '7.0.1')
+
+    implementation(group: 'org.scala-lang.modules', name: 'scala-collection-compat_2.13', version: '2.2.0')
+    implementation(group: 'org.scala-lang.modules', name: 'scala-java8-compat_2.13', version: '0.9.1')
+    implementation(group: 'org.scala-lang', name: 'scala-library', version: '2.13.4')
+    implementation(group: 'org.scala-lang', name: 'scala-reflect', version: '2.13.3')
+
+    compileOnly "org.projectlombok:lombok:1.18.16"
+    annotationProcessor "org.projectlombok:lombok:1.18.16"
+}

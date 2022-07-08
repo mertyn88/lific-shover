@@ -1,0 +1,24 @@
+### build
+build/
+
+# !**/src/main/**
+# !**/src/test/**
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+
+### DS store ###
+.DS_Store
+
+### gradle
+.gradle
+gradlew
+gradlew.bat
+gradle/wrapper/*
+
+## querydsl
+*/src/main/generated/
