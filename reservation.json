@@ -1,0 +1,86 @@
+{
+  "type": "record",
+  "name": "ReservationModel",
+  "namespace": "io.lific.data.request.consumer.reservation",
+  "doc": "Consumer reservation schema",
+  "fields": [
+    {
+      "name": "member_uid",
+      "type": "long",
+      "doc": "로그인 ID"
+    },
+    {
+      "name": "reservation_id",
+      "type": "long",
+      "doc": "예약 ID"
+    },
+    {
+      "name": "reservation_count",
+      "type": "int",
+      "doc": "예약 회차"
+    },
+    {
+      "name": "reservation_cancel",
+      "type": "int",
+      "doc": "예약 취소 여부(0: 미취소, 1: 취소)",
+      "default": 0
+    },
+    {
+      "name": "reservation_partner_cancel",
+      "type": "int",
+      "doc": "공급자 예약 취소 여부(0: 미취소, 1: 취소)",
+      "default": 0
+    },
+    {
+      "name": "reservation_update",
+      "type": "int",
+      "doc": "예약 변경 여부(0: 미변경, 1: 변경)",
+      "default": 0
+    },
+    {
+      "name": "reservation_form",
+      "type": "int",
+      "doc": "예약 형태 (0: 대기, 1: 즉시)",
+      "default": 0
+    },
+    {
+      "name": "reservation_staff_id",
+      "type": [
+        "null",
+        "long"
+      ],
+      "doc": "예약 스태프 ID",
+      "default": null
+    },
+    {
+      "name": "branch_id",
+      "type": "long",
+      "doc": "업체 ID"
+    },
+    {
+      "name": "product_id",
+      "type": "long",
+      "doc": "상품 ID"
+    },
+    {
+      "name": "product_type",
+      "type": "string",
+      "doc": "상품 유형"
+    },
+    {
+      "name": "major_category_id",
+      "type": "long",
+      "doc": "1차 카테고리 ID"
+    },
+    {
+      "name": "minor_category_id",
+      "type": "long",
+      "doc": "2차 카테고리 ID"
+    },
+    {
+      "name": "datetime",
+      "type": "string",
+      "doc": "입력 시간"
+    }
+  ]
+}
