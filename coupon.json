@@ -1,0 +1,60 @@
+{
+  "type": "record",
+  "name": "BenefitCouponModel",
+  "namespace": "io.lific.data.request.consumer.benefit",
+  "doc": "Consumer benefit coupon schema",
+  "fields": [
+    {
+      "name": "member_uid",
+      "type": "long",
+      "doc": "로그인 ID"
+    },
+    {
+      "name": "coupon_id",
+      "type": "long",
+      "doc": "쿠폰 ID"
+    },
+    {
+      "name": "coupon_issue_id",
+      "type": "long",
+      "doc": "쿠폰 발급 ID"
+    },
+    {
+      "name": "coupon_display_amount",
+      "type": "long",
+      "doc": "쿠폰 명시 금액",
+      "default": 0
+    },
+    {
+      "name": "coupon_discount_amount",
+      "type": "long",
+      "doc": "쿠폰 할인 금액",
+      "default": 0
+    },
+    {
+      "name": "coupon_use",
+      "type": "int",
+      "doc": "쿠폰 사용 여부 (0:미사용, 1:사용)"
+    },
+    {
+      "name": "coupon_sortation",
+      "type": "string",
+      "doc": "쿠폰 구분 (정액, 정률)"
+    },
+    {
+      "name": "coupon_type",
+      "type": "string",
+      "doc": "쿠폰 유형(발급처)"
+    },
+    {
+      "name": "coupon_status",
+      "type": "string",
+      "doc": "쿠폰 상태 (0:생성(사용가능), 1:사용(사용불가능), 2:만료(사용불가능), 3:환불(사용가능), 4:회수(사용불가능))"
+    },
+    {
+      "name": "datetime",
+      "type": "string",
+      "doc": "입력 시간"
+    }
+  ]
+}
