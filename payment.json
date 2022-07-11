@@ -1,0 +1,91 @@
+{
+  "type": "record",
+  "name": "PaymentModel",
+  "namespace": "io.lific.data.request.consumer.payment",
+  "doc": "onsumer payment schema",
+  "fields": [
+    {
+      "name": "member_uid",
+      "type": "long",
+      "doc": "로그인 ID"
+    },
+    {
+      "name": "payment_id",
+      "type": "long",
+      "doc": "결제 ID"
+    },
+    {
+      "name": "payment_amount",
+      "type": "long",
+      "doc": "결제 금액"
+    },
+    {
+      "name": "payment_point",
+      "type": "long",
+      "doc": "결제 포인트",
+      "default": 0
+    },
+    {
+      "name": "coupon_use",
+      "type": "int",
+      "doc": "쿠폰 사용 여부 (0:미사용, 1:사용)"
+    },
+    {
+      "name": "payment_coupon",
+      "type": "long",
+      "doc": "결제 쿠폰 금액",
+      "default": 0
+    },
+    {
+      "name": "payment_total_amount",
+      "type": "long",
+      "doc": "결제 전체 금액"
+    },
+    {
+      "name": "payment_method",
+      "type": "string",
+      "doc": "결제 수단"
+    },
+    {
+      "name": "payment_count",
+      "type": "int",
+      "doc": "결제 회차"
+    },
+    {
+      "name": "payment_cancel",
+      "type": "int",
+      "doc": "결제 취소 여부(0: 미취소, 1: 취소)",
+      "default": 0
+    },
+    {
+      "name": "branch_id",
+      "type": "long",
+      "doc": "업체 ID"
+    },
+    {
+      "name": "product_id",
+      "type": "long",
+      "doc": "상품 ID"
+    },
+    {
+      "name": "product_type",
+      "type": "string",
+      "doc": "상품 유형"
+    },
+    {
+      "name": "major_category_id",
+      "type": "long",
+      "doc": "1차 카테고리 ID"
+    },
+    {
+      "name": "minor_category_id",
+      "type": "long",
+      "doc": "2차 카테고리 ID (패키지 상품인 경우 0)"
+    },
+    {
+      "name": "datetime",
+      "type": "string",
+      "doc": "입력 시간"
+    }
+  ]
+}
