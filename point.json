@@ -1,0 +1,51 @@
+{
+  "type": "record",
+  "name": "BenefitPointModel",
+  "namespace": "io.lific.data.request.consumer.benefit",
+  "doc": "Consumer benefit point schema",
+  "fields": [
+    {
+      "name": "member_uid",
+      "type": "long",
+      "doc": "로그인 ID"
+    },
+    {
+      "name": "point_id",
+      "type": "long",
+      "doc": "포인트 ID"
+    },
+    {
+      "name": "point_provide",
+      "type": "long",
+      "doc": "포인트 지급금"
+    },
+    {
+      "name": "point_type",
+      "type": "string",
+      "doc": "포인트 유형"
+    },
+    {
+      "name": "branch_id",
+      "type": [
+        "null",
+        "long"
+      ],
+      "doc": "업체 ID",
+      "default": null
+    },
+    {
+      "name": "product_id",
+      "type": [
+        "null",
+        "long"
+      ],
+      "doc": "상품 ID",
+      "default": null
+    },
+    {
+      "name": "datetime",
+      "type": "string",
+      "doc": "입력 시간"
+    }
+  ]
+}
